@@ -1,28 +1,28 @@
-const gcdOfStrings = (str1, str2) => {
-
-    let res = "";
-    let i = 0;
-
-    while(i < str1.length && i < str2.length){
-
-        // Check if char of str1 is equal to har of str2
-        if(str1[i] === str2[i]){
-
-            // Check if a char is already in the res string
-            if(!res.includes(str1[i])){
-                res += str1[i]
-            }
-            i++
-
-        }else{
-            break;
+function gcdOfStrings(s, t) {
+    // Fonction pour vérifier si str1 est divisible par str2
+    function isDivisible(str1, str2) {
+        if (str1.length % str2.length !== 0) {
+            return false;
         }
-
+        const repetition = str1.length / str2.length;
+        return str2.repeat(repetition) === str1;
     }
-  
-    return res;
+
+    // Identifier la plus petite et la plus grande chaîne
+    const [smaller, larger] = s.length < t.length ? [s, t] : [t, s];
+
+    // Itérer sur les sous-chaînes de la plus petite chaîne
+    for (let i = smaller.length; i > 0; i--) {
+        const candidate = smaller.substring(0, i);
+        if (isDivisible(smaller, candidate) && isDivisible(larger, candidate)) {
+            return candidate;
+        }
+    }
+
+    // Retourner une chaîne vide si aucun diviseur commun n'est trouvé
+    return '';
 }
 
-console.log(gcdOfStrings("ABCABC", "ABC"))
-console.log(gcdOfStrings("ABABAB", "ABAB"))
-console.log(gcdOfStrings("LEET", "CODE"))
+// Exemple d'utilisation
+console.log(gcdOfStrings("ABABAB", "ABAB")); // "AB"
+console.log(gcdOfStrings("ABCDEF", "ABC")); // ""
