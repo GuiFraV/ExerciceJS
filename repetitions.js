@@ -49,7 +49,6 @@ const gcdOfStringsTest = (s, t) => {
             return candidate;
         }
 
-        return candidate;
 
 
     }
@@ -79,7 +78,6 @@ const gdc = (s, t) => {
         if(isDivi(smaller, candidate) && isDivi(larger, candidate)){
             return candidate;
         }
-        return candidate;
     }
 
     return '';
@@ -109,7 +107,6 @@ const gdcString = (s, t) => {
             return candidate;
         }
 
-        return candidate;
     }
 
     return ""
