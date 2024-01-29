@@ -234,6 +234,37 @@ console.log(fibo(7))
 console.log(fibo(8))
 console.log(fibo(9))
 
+const fib = (nbr) => {
+
+    if(nbr < 2){
+        return nbr;
+    }
+
+    let a = 0;
+    let b = 1;
+
+    for(let i = 0 ; i < nbr; i++){
+        let res = a + b;
+        a = b;
+        b = res;
+    }
+
+    return b;
+}
+
+console.log(fib(1))
+console.log(fib(2))
+console.log(fib(3))
+console.log(fib(4))
+console.log(fib(5))
+console.log(fib(6))
+console.log(fib(7))
+console.log(fib(8))
+console.log(fib(9))
+console.log(fib(10))
+
+
+
 
 
 
