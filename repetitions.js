@@ -224,15 +224,15 @@ const fibo = (nbr) => {
 
 }
 
-console.log(fibo(1))
-console.log(fibo(2))
-console.log(fibo(3))
-console.log(fibo(4))
-console.log(fibo(5))
-console.log(fibo(6))
-console.log(fibo(7))
-console.log(fibo(8))
-console.log(fibo(9))
+// console.log(fibo(1))
+// console.log(fibo(2))
+// console.log(fibo(3))
+// console.log(fibo(4))
+// console.log(fibo(5))
+// console.log(fibo(6))
+// console.log(fibo(7))
+// console.log(fibo(8))
+// console.log(fibo(9))
 
 const fib = (nbr) => {
 
@@ -252,16 +252,40 @@ const fib = (nbr) => {
     return b;
 }
 
-console.log(fib(1))
-console.log(fib(2))
-console.log(fib(3))
-console.log(fib(4))
-console.log(fib(5))
-console.log(fib(6))
-console.log(fib(7))
-console.log(fib(8))
-console.log(fib(9))
-console.log(fib(10))
+// console.log(fib(1))
+// console.log(fib(2))
+// console.log(fib(3))
+// console.log(fib(4))
+// console.log(fib(5))
+// console.log(fib(6))
+// console.log(fib(7))
+// console.log(fib(8))
+// console.log(fib(9))
+// console.log(fib(10))
+
+
+const array = [5, 1, 22, 25, 6, -1, 8, 10]
+const sequence = [1, 6, -1, 10]
+
+const validateSubsequence = (arr, seq) => {
+
+    let arrIdx = 0;
+    let seqIdx = 0;
+
+    while(arrIdx !== arr.length && seqIdx !== seq.length){
+
+        if(arr[arrIdx] !== seq[seqIdx]){
+            seqIdx++;
+        }else{
+            arrIdx++;
+        }
+    }
+
+    return seqIdx === seq.length;
+
+}
+
+console.log(validateSubsequence(array,sequence));
 
 
 
