@@ -381,7 +381,31 @@ const gc = (t, s) => {
 
 
 
-console.log(gc("ABABAB", "ABAB")); // "AB"
-console.log(gc("ABCDEF", "ABC")); // ""
+// console.log(gc("ABABAB", "ABAB")); // "AB"
+// console.log(gc("ABCDEF", "ABC")); // ""
 
+
+
+const gd = (s, t) => {
+
+    const de = (str1, str2) => {
+        if(str1.length % str2.length !== 0){
+            return false;
+        }
+        const repetition = str1.length / str2.length;
+        return str2.repeat(repetition) === str1;
+    }
+
+    const [smaller, larger] = s < t ? [s, t] : [t, s];
+
+    for(let i = smaller.length; i<0; i--){
+
+        const candidate = smaller.substring(0, i);
+        if(de(smaller, candidate) < de(larger, candidate)){
+            return candidate;
+        }
+    }
+
+    return "";
+}
 
