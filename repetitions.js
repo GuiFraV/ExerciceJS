@@ -409,3 +409,34 @@ const gd = (s, t) => {
     return "";
 }
 
+
+
+
+const c = (s, t) => {
+
+    const ide = (str1, str2) => {
+
+        if(str1.length % str2.length !== 0){
+            return false;
+        }
+        const repetition = str1.length / str2.length;
+        return str2.repeat(repetition) === str1;
+    }
+
+    const [ smaller, larger ] = s.length < t.length ? [s,t] : [t, s];
+
+    for(let i = smaller.length; i > 0; i--){
+        const candidate = smaller.substring(0, i);
+        if(ide(smaller, candidate) && ide(larger, candidate)){
+            return candidate;
+        }
+    }
+
+
+    return ""
+
+}
+
+
+console.log(c("ABABAB", "ABAB")); // "AB"
+console.log(c("ABCDEF", "ABC")); // ""
