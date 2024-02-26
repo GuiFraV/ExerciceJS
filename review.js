@@ -1,23 +1,21 @@
 const mergeAlternately = (word1, word2) => {
-
     let res = [];
 
-    if(word1.length > word2.length){
-        
-        for(let i = 0 ; i < word1.length; i++){
-            res.push(word1[i]);
-            res.push(word2[i]);
+    // Determine the maximum length between word1 and word2
+    const maxLength = (word1.length >= word2.length) ? word1.length : word2.length;
+
+    // Traverse both words simultaneously
+    for (let i = 0; i < maxLength; i++) {
+        // Add the character from word1 to res if it exists
+        if (i < word1.length) {
+            res[i] = word1[i];
         }
-    }else{
-        for(let i = 0 ; i < word2.length; i++){
-            res.push(word1[i]);
-            res.push(word2[i]);
+        // Add the character from word2 to res if it exists
+        if (i < word2.length) {
+            res[i + word1.length] = word2[i];
         }
     }
 
-    return res.filter(el => { return el != undefined}).join("");
-
+    // Return the result as a string
+    return res.join("");
 }
-
-console.log(mergeAlternately("ab","pqrs"));
-console.log(mergeAlternately("abcd","pq"));
