@@ -57,3 +57,4 @@ const reverseVowels = (s) => {
 
 
 console.log(reverseVowels("hello"))
+console.log(reverseVowels("a.b,."))
