@@ -30,11 +30,11 @@ const reverseVowels = (s) => {
 
     while(left < right){
 
-        if(!vowels.includes(arrString[left])){
+        while (left < right && !vowels.includes(arrString[left])) {
             left++;
         }
 
-        if(!vowels.includes(arrString[right])){
+        while (left < right && !vowels.includes(arrString[right])) {
             right--;
         }
 
@@ -51,7 +51,7 @@ const reverseVowels = (s) => {
 
     }
 
-    return arrString.join("");
+    return arrString;
 
 }
 
