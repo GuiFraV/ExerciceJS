@@ -82,55 +82,16 @@ const canPlaceFlowers = (flowerbed, n) => {
 
 
 const canPlaceFlowers1 = (flowerbed, n) => {
-
-    let plantFlowerBed = [];
     let count = 0;
 
     for(let i = 0; i < flowerbed.length; i++){
-        plantFlowerBed.push(flowerbed[i])
-    }
-
-    for(let i = 0 ; i < plantFlowerBed.length; i++){
-
-        if(plantFlowerBed.length < 2 && plantFlowerBed[0] === 0){
-            plantFlowerBed[0] = 1;
+        if(flowerbed[i] === 0 && (i === 0 || flowerbed[i - 1] === 0) && (i === flowerbed.length - 1 || flowerbed[i + 1] === 0)){
+            flowerbed[i] = 1;
             count++;
         }
-
-        if(plantFlowerBed.length >= 2 && plantFlowerBed[0] === 0){
-            if(plantFlowerBed[1] === 0){
-                plantFlowerBed[0] = 1;
-                count++;
-            }
-        }
-
-        if(plantFlowerBed.length >= 2 && plantFlowerBed[plantFlowerBed.length -1] === 0){
-            if(plantFlowerBed[plantFlowerBed.length -2] === 0){
-                plantFlowerBed[plantFlowerBed.length -1] = 1;
-                count++;
-            }
-        }
-
-        if(plantFlowerBed.length >= 2 && plantFlowerBed[i] === 0){
-            if(plantFlowerBed[i + 1] === 0){
-                if(plantFlowerBed[i + 2] === 0){
-                    plantFlowerBed[i + 1] = 1;
-                    count++;
-                }
-            }
-        }
-
     }
 
-    console.log(plantFlowerBed)
-    console.log(plantFlowerBed.length)
-
-    return count === n || count > n;
-
-    // return plantFlowerBed;
-
-
-
+    return count >= n;
 }
 
 console.log(canPlaceFlowers1([1,0,0,0,1], 1)) //true
