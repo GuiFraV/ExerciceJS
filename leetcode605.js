@@ -100,7 +100,7 @@ const canPlaceFlowers1 = (flowerbed, n) => {
         if(plantFlowerBed.length >= 2 && plantFlowerBed[0] === 0){
             if(plantFlowerBed[1] === 0){
                 plantFlowerBed[0] = 1;
-                count++
+                count++;
             }
         }
 
