@@ -21,40 +21,50 @@
 // }
 
 
-const reverseVowels = (s) => {
+// const reverseVowels = (s) => {
 
-    const vowels = "aeiouAEIOU";
-    let arrString = s.split("");
-    let left = 0;
-    let right = arrString.length -1;
+//     const vowels = "aeiouAEIOU";
+//     let arrString = s.split("");
+//     let left = 0;
+//     let right = arrString.length -1;
 
-    while(left < right){
+//     while(left < right){
 
-        while (left < right && !vowels.includes(arrString[left])) {
-            left++;
-        }
+//         while (left < right && !vowels.includes(arrString[left])) {
+//             left++;
+//         }
 
-        while (left < right && !vowels.includes(arrString[right])) {
-            right--;
-        }
+//         while (left < right && !vowels.includes(arrString[right])) {
+//             right--;
+//         }
 
-        if(left < right){
+//         if(left < right){
 
-            let temp = arrString[left];
-            arrString[left] = arrString[right];
-            arrString[right] = temp;
+//             let temp = arrString[left];
+//             arrString[left] = arrString[right];
+//             arrString[right] = temp;
 
-            left++;
-            right--;
+//             left++;
+//             right--;
 
-        }
+//         }
 
-    }
+//     }
 
-    return arrString;
+//     return arrString;
 
+// }
+
+
+// console.log(reverseVowels("hello"))
+// console.log(reverseVowels("a.b,."))
+
+
+const n = 5;
+
+let result = 1;
+for (let i = 1; i <= n; i++) {
+    console.log(result)
+    result *= i;
 }
-
-
-console.log(reverseVowels("hello"))
-console.log(reverseVowels("a.b,."))
+console.log(result);
