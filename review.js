@@ -60,11 +60,34 @@
 // console.log(reverseVowels("a.b,."))
 
 
-const n = 5;
+// const n = 5;
 
-let result = 1;
-for (let i = 1; i <= n; i++) {
-    console.log(result)
-    result *= i;
+// let result = 1;
+// for (let i = 1; i <= n; i++) {
+//     console.log(result)
+//     result *= i;
+// }
+// console.log(result);
+
+
+// Exercice 1 : Initialisation de la grille
+// Objectif : Créer une fonction initGrid(n) qui initialise une grille carrée de taille n x n remplie de pixels blancs ('.').
+// Instructions :
+// La fonction doit prendre un paramètre n représentant la taille de la grille.
+// Utilisez la méthode Array(n).fill() pour créer un tableau de n éléments.
+// Utilisez la méthode map() pour transformer chaque élément en une ligne de n pixels blancs ('.').
+// Utilisez la méthode split('') pour convertir chaque ligne en un tableau de caractères.
+// La fonction doit retourner la grille initialisée.
+
+function initGrid(n) {
+  // Votre code ici
 }
-console.log(result);
+
+const grid = initGrid(3);
+console.log(grid);
+// Output :
+// [
+//   ['.', '.', '.'],
+//   ['.', '.', '.'],
+//   ['.', '.', '.']
+// ]
