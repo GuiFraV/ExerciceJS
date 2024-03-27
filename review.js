@@ -75,10 +75,35 @@ function initGrid(n) {
 }
 
 const grid = initGrid(5);
-console.log(grid);
+// console.log(grid);
 // Output :
 // [
 //   ['.', '.', '.'],
 //   ['.', '.', '.'],
 //   ['.', '.', '.']
+// ]
+
+// Exercice 2 : Remplissage d'une colonne
+// Objectif : Créer une fonction fillColumn(grid, col) qui remplit une colonne de la grille avec des pixels noirs ('#').
+// Instructions :
+// La fonction doit prendre deux paramètres : grid (la grille) et col (l'index de la colonne à remplir).
+// Parcourez chaque ligne de la grille à l'aide d'une boucle for...of.
+// Pour chaque ligne, remplacez le pixel à l'index col par '#'.
+
+function fillColumn(grid, col) {
+  // Votre code ici
+}
+
+const grid = [
+  ['.', '.', '.'],
+  ['.', '.', '.'],
+  ['.', '.', '.']
+];
+fillColumn(grid, 1);
+console.log(grid);
+// Output :
+// [
+//   ['.', '#', '.'],
+//   ['.', '#', '.'],
+//   ['.', '#', '.']
 // ]
