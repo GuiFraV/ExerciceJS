@@ -70,20 +70,11 @@
 // console.log(result);
 
 
-// Exercice 1 : Initialisation de la grille
-// Objectif : Créer une fonction initGrid(n) qui initialise une grille carrée de taille n x n remplie de pixels blancs ('.').
-// Instructions :
-// La fonction doit prendre un paramètre n représentant la taille de la grille.
-// Utilisez la méthode Array(n).fill() pour créer un tableau de n éléments.
-// Utilisez la méthode map() pour transformer chaque élément en une ligne de n pixels blancs ('.').
-// Utilisez la méthode split('') pour convertir chaque ligne en un tableau de caractères.
-// La fonction doit retourner la grille initialisée.
-
 function initGrid(n) {
-  // Votre code ici
+    return Array(n).fill(".").map(() => Array(n).fill('.'));
 }
 
-const grid = initGrid(3);
+const grid = initGrid(5);
 console.log(grid);
 // Output :
 // [
