@@ -13,12 +13,12 @@ const binary_search = (arr, target) => {
       return middle;
     }
 
-    if (arr[middle] > target) {
-      right = middle - 1;
-    }
-
     if (arr[middle] < target) {
       left = middle + 1;
+    }
+
+    if (arr[middle] > target) {
+      right = middle - 1;
     }
   }
 
