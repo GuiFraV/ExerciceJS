@@ -1,7 +1,7 @@
 const arr = [1, 2, 3, 4, 5];
 const target = 5;
 
-// test
+// test blabla
 const binary_search = (arr, target) => {
   let left = 0;
   let right = arr.length - 1;
