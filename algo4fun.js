@@ -26,7 +26,7 @@ const binary_search = (arr, target) => {
   return result;
 };
 
-console.log(binary_search(arr, target));
+// console.log(binary_search(arr, target));
 
 const arr1 = [1, 2, 2, 2, 3, 4, 5];
 const target1 = 2;
@@ -86,7 +86,53 @@ const binarySearch = (arr, target) => {
 // console.log(binarySearch([1, 2, 3, 4, 5], 4)); // Output: -3
 // console.log(binarySearch([1, 2, 3, 4, 5], 6)); // Output: -1
 
-// const findFirstAndLast = (arr, target) => {};
+const findFirstAndLast = (arr, target) => {
+  const findFirst = (arr, target) => {
+    let left = 0;
+    let right = arr.length - 1;
+    let first = -1;
 
-// console.log(findFirstAndLast([1, 2, 3, 3, 3, 4, 5], 3)); // Output: [2, 4]
-// console.log(findFirstAndLast([1, 2, 3, 4, 5], 6)); // Output: [-1, -1]
+    while (left <= right) {
+      let middle = Math.floor((left + right) / 2);
+
+      if (arr[middle] === target) {
+        first = middle;
+        right = middle - 1;
+      } else if (arr[middle < target]) {
+        left = middle + 1;
+      } else {
+        right = middle - 1;
+      }
+    }
+
+    return first;
+  };
+
+  const findLast = (arr, target) => {
+    let left = 0;
+    let right = arr.length - 1;
+    let last = -1;
+
+    while (left <= right) {
+      let middle = Math.floor((left + right) / 2);
+
+      if (arr[middle] === target) {
+        last = middle;
+        left = middle + 1;
+      } else if (arr[middle] < target) {
+        left = middle + 1;
+      } else {
+        right = middle - 1;
+      }
+    }
+    return last;
+  };
+
+  const firstIndex = findFirst(arr, target);
+  const lastIndex = findLast(arr, target);
+
+  return [firstIndex, lastIndex];
+};
+
+console.log(findFirstAndLast([1, 2, 3, 3, 3, 4, 5], 3)); // Output: [2, 4]
+console.log(findFirstAndLast([1, 2, 3, 4, 5], 6)); // Output: [-1, -1]
