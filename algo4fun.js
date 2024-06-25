@@ -11,7 +11,8 @@ const binary_search = (arr, target) => {
     let middle = Math.floor((left + right) / 2);
 
     if (arr[middle] === target) {
-      return middle;
+      result = middle;
+      break;
     }
 
     if (arr[middle] < target) {
@@ -22,11 +23,10 @@ const binary_search = (arr, target) => {
       right = middle - 1;
     }
   }
-
   return result;
 };
 
-// console.log(binary_search(arr, target));
+console.log(binary_search(arr, target));
 
 const arr1 = [1, 2, 2, 2, 3, 4, 5];
 const target1 = 2;
@@ -134,5 +134,5 @@ const findFirstAndLast = (arr, target) => {
   return [firstIndex, lastIndex];
 };
 
-console.log(findFirstAndLast([1, 2, 3, 3, 3, 4, 5], 3)); // Output: [2, 4]
-console.log(findFirstAndLast([1, 2, 3, 4, 5], 6)); // Output: [-1, -1]
+// console.log(findFirstAndLast([1, 2, 3, 3, 3, 4, 5], 3)); // Output: [2, 4]
+// console.log(findFirstAndLast([1, 2, 3, 4, 5], 6)); // Output: [-1, -1]
