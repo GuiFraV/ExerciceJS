@@ -14,7 +14,7 @@ const findDifference = (arr) => {
     if (arr[i] < min) {
       min = arr[i];
     } else if (arr[i] - min > max) {
-      max = prices[i] - min;
+      max = arr[i] - min;
     }
   }
 
