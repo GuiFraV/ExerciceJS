@@ -25,3 +25,6 @@ var actifName = investment[0], _b = investment[1], achat1 = _b[0], achat2 = _b[1
 var sumTransaction = achat1 + achat2 + achat3;
 var sumVente = prixVente1 + prixVente2 + prixVente3;
 console.log("La soci\u00E9t\u00E9 ".concat(actifName, " \u00E0 une marge b\u00E9n\u00E9ficiaire de ").concat(sumVente - sumTransaction));
+var discount = 20;
+discount;
+console.log(discount);

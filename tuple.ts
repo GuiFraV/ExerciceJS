@@ -44,3 +44,7 @@ console.log(
     sumVente - sumTransaction
   }`
 );
+
+let discount: number | string = 20;
+discount;
+console.log(discount);
