@@ -54,5 +54,9 @@ const jumpGame = (nums) => {
       maxJump = i;
     }
   }
+
   return maxJump === 0;
 };
+
+console.log(jumpGame([2, 3, 1, 1, 4]));
+console.log(jumpGame([3, 2, 1, 0, 4]));
