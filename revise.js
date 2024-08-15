@@ -95,5 +95,26 @@ const jumpGame2 = (nums) => {
   return jump;
 };
 
-console.log(jumpGame2([2, 3, 1, 1, 4]));
-console.log(jumpGame2([2, 3, 1, 1, 4]));
+// console.log(jumpGame2([2, 3, 1, 1, 4]));
+// console.log(jumpGame2([2, 3, 1, 1, 4]));
+
+const iso = (s, t) => {
+  let objS = {};
+  let objT = {};
+
+  for (let i = 0; i < s.length; i++) {
+    if (objS[s[i]] && objS[s[i]] !== t[i]) {
+      return false;
+    } else {
+      objS[s[i]] = t[i];
+    }
+
+    if (objT[t[i]] && objT[t[i]] !== s[i]) {
+      return false;
+    } else {
+      objT[t[i]] = s[i];
+    }
+  }
+  return true;
+};
+// console.log(iso("egg", "add"));
