@@ -11,4 +11,27 @@ const isIsomorphique = (s, t) => {
   return true;
 };
 
-console.log(isIsomorphique("egg", "add"));
+// console.log(isIsomorphique("egg", "add"));
+
+const jumpGameII = (nums) => {
+  let currentMax = 0;
+  let minJump = 0;
+  let nextMax = 0;
+
+  for (let i = 0; i < nums.length; i++) {
+    nextMax = Math.max(nextMax, i + nums[i]);
+
+    if (i === currentMax) {
+      minJump++;
+      currentMax = nextMax;
+    }
+
+    if (currentMax >= nums.length - 1) {
+      return minJump;
+    }
+  }
+
+  return minJump;
+};
+
+console.log(jumpGameII([2, 3, 1, 1, 4]));
