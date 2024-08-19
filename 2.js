@@ -40,11 +40,9 @@ const maxProfit = (prices) => {
 const jumpGame = (nums) => {
   let minJump = nums.length - 1;
 
-  for (let i = nums.length - 2; i > 0; i--) {
+  for (let i = nums.length - 2; i >= 0; i--) {
     if (nums[i] + i >= minJump) {
-      minJump = nums[i];
-    } else {
-      return false;
+      minJump = i;
     }
   }
 
