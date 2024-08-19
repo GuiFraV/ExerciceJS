@@ -63,13 +63,13 @@ const jumpGame = (nums) => {
 const jumpGame2 = (nums) => {
   let nextMax = 0;
   let currentMax = 0;
-  let jump = 0;
+  let jumps = 0;
 
   for (let i = 0; i < nums.length; i++) {
     nextMax = Math.max(nextMax, nums[i] + i);
 
     if (i === currentMax) {
-      jump++;
+      jumps++;
       currentMax = nextMax;
     }
 
