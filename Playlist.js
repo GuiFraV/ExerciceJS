@@ -1,5 +1,5 @@
 class PlaylistManager {
-  constructor(map, array) {
+  constructor() {
     this.map = new Map();
     this.array = new Array();
   }
