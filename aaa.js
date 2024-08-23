@@ -23,6 +23,30 @@ const romanToInt = (s) => {
   return result;
 };
 
-console.log(romanToInt("III"));
-console.log(romanToInt("LVIII"));
-console.log(romanToInt("MCMXCIV"));
+// console.log(romanToInt("III"));
+// console.log(romanToInt("LVIII"));
+// console.log(romanToInt("MCMXCIV"));
+
+const jumpGameII = (nums) => {
+  let currentMax = 0;
+  let nextMax = 0;
+  let jump = 0;
+
+  for (let i = 0; i < nums.length; i++) {
+    nextMax = Math.max(nextMax, i + nums[i]);
+
+    if (i === currentMax) {
+      currentMax = nextMax;
+      jump++;
+    }
+
+    if (currentMax >= nums[nums.length - 1]) {
+      return jump;
+    }
+  }
+
+  return jump;
+};
+
+console.log(jumpGameII([2, 3, 1, 1, 4]));
+console.log(jumpGameII([2, 3, 0, 1, 4]));
