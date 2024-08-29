@@ -45,8 +45,8 @@ const bestTimeToBuy = (prices) => {
   return maxValue;
 };
 
-console.log(bestTimeToBuy([7, 1, 5, 3, 6, 4]));
-console.log(bestTimeToBuy([7, 6, 4, 3, 1]));
+// console.log(bestTimeToBuy([7, 1, 5, 3, 6, 4]));
+// console.log(bestTimeToBuy([7, 6, 4, 3, 1]));
 
 const jumpGame = (nums) => {
   let goal = nums.length - 1;
@@ -60,5 +60,23 @@ const jumpGame = (nums) => {
   return goal === 0;
 };
 
-console.log(jumpGame([2, 3, 1, 1, 4]));
-console.log(jumpGame([3, 2, 1, 0, 4]));
+// console.log(jumpGame([2, 3, 1, 1, 4]));
+// console.log(jumpGame([3, 2, 1, 0, 4]));
+
+const longestCommonPrefix = function (strs) {
+  if (strs.length === 0) return "";
+  if (strs.length === 1) return strs[0];
+  let prefix = strs[0];
+  for (let i = 1; i < strs.length; i++) {
+    while (strs[i].indexOf(prefix) !== 0) {
+      prefix = prefix.substring(0, prefix.length - 1);
+
+      if (prefix === "") return "";
+    }
+  }
+
+  return prefix;
+};
+
+console.log(longestCommonPrefix(["flower", "flow", "flight"]));
+console.log(longestCommonPrefix(["dog", "racecar", "car"]));
