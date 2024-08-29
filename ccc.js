@@ -10,3 +10,23 @@ const longest = (strs) => {
 
   return prefix;
 };
+
+const jumpGameII = (nums) => {
+  let currentMax = 0;
+  let nextMax = 0;
+  let minJump = 0;
+
+  for (let i = 0; i < nums.length; i++) {
+    nextMax = Math.max(i + nums[i], nextMax);
+
+    if (i === currentMax) {
+      minJump++;
+      currentMax = nextMax;
+    }
+
+    if (currentMax >= nums.length - 1) {
+      return jumps;
+    }
+  }
+  return jumps;
+};
