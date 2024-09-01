@@ -44,5 +44,20 @@ const longest = (strs) => {
   return prefix;
 };
 
-console.log(longest(["flower", "flow", "flight"]));
-console.log(longest(["dog", "racecar", "car"]));
+// console.log(longest(["flower", "flow", "flight"]));
+// console.log(longest(["dog", "racecar", "car"]));
+
+const jG = (nums) => {
+  let minJump = nums.length - 1;
+
+  for (let i = nums.length - 2; i >= 0; i--) {
+    if (i + nums[i] >= minJump) {
+      minJump = i;
+    }
+  }
+
+  return minJump === 0;
+};
+
+console.log(jG([2, 3, 1, 1, 4]));
+console.log(jG([3, 2, 1, 0, 4]));
