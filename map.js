@@ -1,21 +1,20 @@
-const BestPairSum = (nums, k) => {
-  let result = [];
+const first = (nums) => {
+  let map = new Map();
 
-  // On utilise deux boucles pour comparer chaque paire possible
+  let result = -1;
+
   for (let i = 0; i < nums.length; i++) {
-    // On commence j à i + 1 pour éviter les doublons et l'utilisation du même index
-    for (let j = i + 1; j < nums.length; j++) {
-      // Si la somme est supérieure ou égale à k
-      if (nums[i] + nums[j] > k) {
-        // On ajoute les indices (pas les valeurs) au résultat
-        result.push([i, j]);
-      }
+    if (map.has(nums[i])) {
+      return nums[i];
     }
+
+    map.set(nums[i], i);
   }
 
+  console.log(map);
   return result;
 };
 
-// Tests
-console.log(BestPairSum([1, 4, 3, 6, 8], 9)); // [[3,4]]
-console.log(BestPairSum([2, 3, 4, 5], 6)); // [[1,3], [2,3]]
+console.log(first([2, 1, 3, 5, 3, 2]));
+console.log(first([1, 2, 3, 4]));
+console.log(first([1, 1]));
