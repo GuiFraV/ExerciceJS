@@ -65,6 +65,27 @@ const validPalindromePair = (words) => {
   return [-1, -1];
 };
 
-console.log(validPalindromePair(["abc", "cba", "def", "fed"]));
-console.log(validPalindromePair(["hello", "world"]));
-console.log(validPalindromePair(["ab", "ba", "cc", "ba"]));
+// console.log(validPalindromePair(["abc", "cba", "def", "fed"]));
+// console.log(validPalindromePair(["hello", "world"]));
+// console.log(validPalindromePair(["ab", "ba", "cc", "ba"]));
+
+const anagram = (words) => {
+  let map = new Map();
+
+  for (let i = 0; i < words.length; i++) {
+    // Trie les lettres du mot pour avoir une "clé normalisée"
+    const sortedWord = words[i].split("").sort().join("");
+
+    if (map.has(sortedWord)) {
+      return [map.get(sortedWord), i];
+    } else {
+      map.set(sortedWord, i);
+    }
+  }
+
+  return [-1, -1];
+};
+
+console.log(anagram(["eat", "tea", "dog", "ate"]));
+console.log(anagram(["hello", "world", "code"]));
+console.log(anagram(["rat", "car", "tar"]));
