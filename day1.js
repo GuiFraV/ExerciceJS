@@ -40,3 +40,20 @@ const invertBianaryTree = (root) => {
   root.right = invertBianaryTree(tmp);
   return root;
 };
+
+const anagram = (s, t) => {
+  let s2 = s.split("").sort();
+  let t2 = t.split("").sort();
+
+  if (s2.length !== t2.length) return false;
+
+  for (let i = 0; i < s2.length; i++) {
+    if (s2[i] !== t2[i]) {
+      return false;
+    }
+  }
+
+  return true;
+};
+
+console.log(anagram("anagram", "nagaram"));
