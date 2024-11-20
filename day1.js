@@ -56,4 +56,25 @@ const anagram = (s, t) => {
   return true;
 };
 
-console.log(anagram("anagram", "nagaram"));
+// console.log(anagram("anagram", "nagaram"));
+
+var search = function (nums, target) {
+  let left = 0;
+  let right = nums.length - 1;
+
+  while (left <= right) {
+    let mid = Math.floor(nums.length / 2);
+
+    if (target === mid) {
+      return mid;
+    }
+
+    if (target < mid) {
+      right = mid;
+    } else {
+      left = mid;
+    }
+  }
+};
+
+console.log(search([-1, 0, 3, 5, 9, 12], 9));
