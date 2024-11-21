@@ -102,4 +102,20 @@ const createList = (arr) => {
   return head;
 };
 
-console.log(createList([1, 2, 3, 5, 6, 8]));
+// console.log(createList([1, 2, 3, 5, 6, 8]));
+
+class TreeNode {
+  constructor(val = 0, left = null, right = null) {
+    this.val = val;
+    this.left = left;
+    this.right = right;
+  }
+}
+
+const invertTree = (root) => {
+  if (!root) return null;
+  let tmp = root.left;
+  root.left = invertTree(root.right);
+  root.right = invertTree(tmp);
+  return root;
+};
