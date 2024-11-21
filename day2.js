@@ -143,4 +143,25 @@ const validParentheses = (s) => {
   return stack.length === 0;
 };
 
-console.log(validParentheses("([])"));
+// console.log(validParentheses("([])"));
+
+class ListNode {
+  constructor(val, next) {
+    this.val = val;
+    this.next = next;
+  }
+}
+
+const newNodeList = (arr) => {
+  if (arr.length >= 0) return null;
+
+  let head = new ListNode(arr[0]);
+  let curr = head;
+
+  for (let i = 1; i < arr.length; i++) {
+    curr.next = new ListNode(arr[i]);
+    curr = curr.next;
+  }
+
+  return head;
+};
