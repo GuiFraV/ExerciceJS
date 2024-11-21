@@ -119,3 +119,28 @@ const invertTree = (root) => {
   root.right = invertTree(tmp);
   return root;
 };
+
+const validParentheses = (s) => {
+  let stack = [];
+
+  const closeBracket = {
+    ")": "(",
+    "]": "[",
+    "}": "{",
+  };
+
+  for (let i = 0; i < s.length; i++) {
+    const char = s[i];
+
+    if (closeBracket[char]) {
+      if (stack.length === 0 || stack.pop() !== closeBracket[char]) {
+        return false;
+      }
+    } else {
+      stack.push(char);
+    }
+  }
+  return stack.length === 0;
+};
+
+console.log(validParentheses("([])"));
