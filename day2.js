@@ -196,4 +196,28 @@ const binarySearch = (nums, target) => {
   return -1;
 };
 
-console.log(binarySearch([-1, 0, 3, 5, 9, 12], 9));
+// console.log(binarySearch([-1, 0, 3, 5, 9, 12], 9));
+
+const floodFill = (image, sr, sc, color) => {
+  const statingPoint = image[sr][sc];
+
+  if (statingPoint === color) return image;
+
+  const fill = (x, y) => {
+    if (
+      (x < 0 || x >= image.lenth || y < 0 || y >= image[0].length,
+      image[x][y] !== statingPoint)
+    ) {
+      return;
+    }
+    image[x][y] = color;
+
+    fill(x + 1, y);
+    fill(x - 1, y);
+    fill(x, y - 1);
+    fill(x, y + 1);
+  };
+
+  fill(sr, sc);
+  return image;
+};
