@@ -68,15 +68,38 @@ const floodFill = (image, sr, sc, color) => {
   return image;
 };
 
-console.log(
-  floodFill(
-    [
-      [1, 1, 1],
-      [1, 1, 0],
-      [1, 0, 1],
-    ],
-    1,
-    1,
-    2
-  )
-);
+// console.log(
+//   floodFill(
+//     [
+//       [1, 1, 1],
+//       [1, 1, 0],
+//       [1, 0, 1],
+//     ],
+//     1,
+//     1,
+//     2
+//   )
+// );
+
+class ListNode {
+  constructor(val = 0, next = null) {
+    this.val = val;
+    this.next = next;
+  }
+}
+
+const createList = (arr) => {
+  if (arr.length === 0) return null;
+
+  let head = new ListNode(arr[0]);
+  let curr = head;
+
+  for (let i = 0; i < arr.length; i++) {
+    curr.next = new ListNode(arr[i]);
+    curr = curr.next;
+  }
+
+  return head;
+};
+
+console.log(createList([1, 2, 3, 5, 6, 8]));
