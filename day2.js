@@ -165,3 +165,12 @@ const newNodeList = (arr) => {
 
   return head;
 };
+
+const invertBiTree = (root) => {
+  if (!root) return null;
+
+  let tmp = root.left;
+  root.left = invertBiTree(root.right);
+  root.right = invertBiTree(tmp);
+  return root;
+};
