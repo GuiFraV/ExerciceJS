@@ -38,4 +38,45 @@ const valideParenthese = (s) => {
   // On recommence la boucle si à la fin s = 0 alors true
 };
 
-console.log(valideParenthese("([])"));
+// console.log(valideParenthese("([])"));
+
+const floodFill = (image, sr, sc, color) => {
+  const a = image[sr][sc];
+
+  if (a === color) return image;
+
+  const fill = (x, y) => {
+    if (
+      x < 0 ||
+      x >= image.length ||
+      y < 0 ||
+      y > image[0].length ||
+      image[x][y] !== a
+    ) {
+      return;
+    }
+
+    image[x][y] = color;
+
+    fill(x + 1, y);
+    fill(x - 1, y);
+    fill(x, y + 1);
+    fill(x, y - 1);
+  };
+
+  fill(sr, sc);
+  return image;
+};
+
+console.log(
+  floodFill(
+    [
+      [1, 1, 1],
+      [1, 1, 0],
+      [1, 0, 1],
+    ],
+    1,
+    1,
+    2
+  )
+);
