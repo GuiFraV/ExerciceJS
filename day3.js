@@ -46,3 +46,20 @@ const createListNode = (arr) => {
 
   return head;
 };
+
+class binaryTree {
+  constructor(val = 0, left = null, right = null) {
+    this.val = val;
+    this.left = left;
+    this.right = right;
+  }
+}
+
+const invertBinaryTree = (root) => {
+  if (!root) return null;
+
+  let temp = root.left;
+  root.right = invertBinaryTree(root.right);
+  root.left = temp;
+  return root;
+};
