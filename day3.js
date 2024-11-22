@@ -114,15 +114,28 @@ const floodFill = (image, sr, sc, color) => {
   return image;
 };
 
-console.log(
-  floodFill(
-    [
-      [1, 1, 1],
-      [1, 1, 0],
-      [1, 0, 1],
-    ],
-    1,
-    1,
-    2
-  )
-);
+// console.log(
+//   floodFill(
+//     [
+//       [1, 1, 1],
+//       [1, 1, 0],
+//       [1, 0, 1],
+//     ],
+//     1,
+//     1,
+//     2
+//   )
+// );
+
+const invertBTree = (root) => {
+  if (!root) return null;
+
+  let tmp = root.left;
+
+  root.left = invertBTree(root.right);
+  root.right = invertBTree(tmp);
+
+  return root;
+};
+
+console.log(invertBTree([4, 2, 7, 1, 3, 6, 9]));
