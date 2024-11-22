@@ -85,3 +85,44 @@ const BianrySearch = (nums, target) => {
 };
 
 console.log(BianrySearch([-1, 0, 3, 5, 9, 12], 9));
+
+const floodFill = (image, sr, sc, color) => {
+  const startingPoint = image[sr][sc];
+
+  if (startingPoint === color) return image;
+
+  const fill = (x, y) => {
+    if (
+      x < 0 ||
+      x >= image.length ||
+      y < 0 ||
+      y > image[0].length ||
+      image[x][y] !== startingPoint
+    ) {
+      return false;
+    }
+
+    image[x][y] = color;
+
+    fill(x - 1, y);
+    fill(x + 1, y);
+    fill(x, y + 1);
+    fill(x, y - 1);
+  };
+
+  fill(sr, sc);
+  return image;
+};
+
+console.log(
+  floodFill(
+    [
+      [1, 1, 1],
+      [1, 1, 0],
+      [1, 0, 1],
+    ],
+    1,
+    1,
+    2
+  )
+);
